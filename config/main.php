@@ -1,15 +1,19 @@
 <?php
 
-use Aigletter\Core\Hello;
-use Aigletter\Core\Router;
+use Aigletter\Core\Components\Hello\HelloFactory;
+use Aigletter\Core\Components\Router\RouterFactory;
+use App\Component\Test\TestFactory;
 
 return [
     'components' => [
         'router' => [
-            'class' => Router::class
+            'factory' => RouterFactory::class,
         ],
         'hello' => [
-            'class' => Hello::class,
+            'factory' => HelloFactory::class,
+        ],
+        'test' => [
+            'factory' => TestFactory::class,
         ]
     ]
 ];

@@ -1,10 +1,12 @@
 <?php
 
 
-namespace Aigletter\Core;
+namespace Aigletter\Core\Components\Router;
 
 
-class Router
+use Aigletter\Core\Contracts\ComponentAbstract;
+
+class Router extends ComponentAbstract
 {
     public function route()
     {
