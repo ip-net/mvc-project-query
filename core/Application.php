@@ -5,7 +5,6 @@ namespace Aigletter\Core;
 
 
 use Aigletter\Core\Components\Router\Router;
-use Aigletter\Core\Components\Router\Router;
 use Aigletter\Core\Contracts\BootstrapInterface;
 use Aigletter\Core\Contracts\ContainerInterface;
 use Aigletter\Core\Contracts\RunnableInterface;
@@ -16,10 +15,8 @@ use Aigletter\Core\Contracts\RunnableInterface;
  * Приложение можно конфигурировать - добавлять и удалять различные севрисы
  *
  * @package Aigletter\Core
- *
- * @property Router
  */
-class Application extends Router implements BootstrapInterface, ContainerInterface, RunnableInterface
+class Application implements BootstrapInterface, ContainerInterface, RunnableInterface
 {
     /**
      * @var Application Экземпляр приложения
