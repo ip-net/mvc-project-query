@@ -6,6 +6,13 @@ namespace Aigletter\Core\Components\Hello;
 
 use Aigletter\Core\Contracts\ComponentAbstract;
 
+/**
+ * Class Hello
+ * Класс бесполезного демонстрационного севриса
+ * В дальнейшем удалим
+ *
+ * @package Aigletter\Core\Components\Hello
+ */
 class Hello extends ComponentAbstract
 {
     protected $param1;

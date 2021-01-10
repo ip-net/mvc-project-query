@@ -4,7 +4,9 @@
 namespace App\Component\Test;
 
 
-class Test
+use Aigletter\Core\Contracts\ComponentAbstract;
+
+class Test extends ComponentAbstract
 {
     public function run()
     {
