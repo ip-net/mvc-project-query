@@ -10,7 +10,7 @@ namespace Aigletter\Core\Contracts;
  *
  * @package Aigletter\Core\Contracts
  */
-abstract class ComponentAbstract implements BootstrapInterface
+abstract class ComponentAbstract implements BootstrapInterface, ComponentInterface
 {
     /**
      * Метод по умолчанию ничего не делает.

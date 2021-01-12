@@ -4,8 +4,6 @@
 namespace Aigletter\Core\Components\Router;
 
 
-use Aigletter\Core\Application;
-use Aigletter\Core\Application;
 use Aigletter\Core\Contracts\ComponentAbstract;
 
 /**
@@ -15,16 +13,78 @@ use Aigletter\Core\Contracts\ComponentAbstract;
  *
  * @package Aigletter\Core\Components\Router
  */
-class Router extends ComponentAbstract, Application, Application
+class Router extends ComponentAbstract
 {
+    public const METHOD_GET = 'get';
+
+    public const METHOD_POST = 'post';
+
+    protected $routes = [];
+
+    public function bootstrap()
+    {
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/../routes/routes.php')) {
+            include $_SERVER['DOCUMENT_ROOT'] . '/../routes/routes.php';
+        }
+    }
+
+    public function get(string $url, callable $action)
+    {
+        $this->addRoute(self::METHOD_GET, $url, $action);
+    }
+
+    public function post(string $url, callable $action)
+    {
+        $this->addRoute(self::METHOD_POST, $url, $action);
+    }
+
     /**
-     * Пока данный метод парсит строку и по пути запроса определяем контроллер и метод, который нужно вызвать
-     * В дальнейшем планируется усовершенствовать этот механизм, чтобы можно было более гибко настраивать роуты
+     * Добавляет роут
+     *
+     * @param string $method Http метод
+     * @param string $url Урл
+     * @param callable $action Действие, которое нужно выполнить при запросе данным методом по данному пути
+     */
+    public function addRoute(string $method, string $url, callable $action)
+    {
+        $method = strtolower($method);
+        $this->routes[$method][$url] = $action;
+    }
+
+    /**
+     * Данный метод определяет путь запроса, определяем HTTP метод, проверяет есть ли в настройках такой роут
+     * Есть роут сконфигурирован возвращает его, если нет выбрасывает исключение
      *
      * @return \Closure
      * @throws \Exception
      */
     public function route()
+    {
+        // Получаем путь запроса
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        // Получаем метод запроса
+        $method = strtolower($_SERVER['REQUEST_METHOD']);
+
+        // Проверяем есть ли сконфигурирован роут по текущему пути с текущим методом
+        if (isset($this->routes[$method][$path])) { // [get]['/page/view']
+            return function () use ($path, $method) {
+                $this->routes[$method][$path]();
+            };
+        }
+
+        throw new \Exception('Not found');
+    }
+
+    /**
+     * Пока данный метод парсит строку и по пути запроса определяем контроллер и метод, который нужно вызвать
+     * В дальнейшем планируется усовершенствовать этот механизм, чтобы можно было более гибко настраивать роуты
+     *
+     * @deprecated
+     *
+     * @return \Closure
+     * @throws \Exception
+     */
+    public function routeOld()
     {
         // Получаем путь с адресной строки
         $path = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));

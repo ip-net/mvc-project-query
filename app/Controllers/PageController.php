@@ -27,10 +27,7 @@ class PageController
      */
     public function viewAction()
     {
-        $app = Application::getInstance();
-        if ($app->has('test')) {
-            echo $app->get('test')->run();
-        }
+       Application::getInstance()->get('db')->test();
     }
 
     /**

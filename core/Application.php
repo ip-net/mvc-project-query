@@ -79,7 +79,7 @@ class Application implements BootstrapInterface, ContainerInterface, RunnableInt
             foreach ($this->config['components'] as $key => $item) {
                 if (isset($item['factory']) && class_exists($item['factory'])) {
                     // Здесь мы не создаем обьекты, а лишь добавляем привязку имени сервиса и фабрики
-                    $this->components[$key] = $item['factory'];
+                    $this->components[$key] = $item;
                 }
             }
         }
@@ -103,8 +103,11 @@ class Application implements BootstrapInterface, ContainerInterface, RunnableInt
         if (array_key_exists($name, $this->components)) {
             // Здесь испоьзуется паттерн Фабричный метод
             // Все классы фабрик наследуют абстрактный класс, у которого есть метод createInstance
-            $factory = new $this->components[$name];
-            $instance = $factory->createInstance();
+            $factory = new $this->components[$name]['factory'];
+            $params = $this->components[$name]['params'] ?? [];
+            $instance = $factory->createInstance($params);
+
+            $instance->bootstrap();
 
             // Вновь созданный экземпляр сервиса добавляем в массив instances
             // Из этого массива будет доставаться уже готовый экземпляр при следующих обращениях к севрису

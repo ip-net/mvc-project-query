@@ -19,14 +19,14 @@ abstract class ComponentFactoryAbstract
      * Публичный метод, который будет использоваться для создания экземпляра сервиса
      * @return ComponentAbstract
      */
-    public function createInstance(): ComponentAbstract
+    public function createInstance($params = []): ComponentInterface
     {
-        return $this->createConcreteInstance();
+        return $this->createConcreteInstance($params);
     }
 
     /**
      * Фабричный метод, для создания конкретных экземпляров сервисов
      * @return ComponentAbstract
      */
-    protected abstract function createConcreteInstance(): ComponentAbstract;
+    protected abstract function createConcreteInstance($params = []): ComponentInterface;
 }

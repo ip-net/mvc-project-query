@@ -4,6 +4,8 @@
 namespace App\Controllers;
 
 
+use Aigletter\Core\Application;
+
 /**
  * Class IndexController
  * Контроллер по умолчанию
@@ -18,5 +20,7 @@ class IndexController
     public function indexAction()
     {
         echo 'IndexAction IndexController';
+
+        Application::getInstance()->get('logger')->debug('Test message');
     }
 }
