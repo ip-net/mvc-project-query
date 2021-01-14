@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Aigletter\Core\Components\Logger;
+namespace Iliah\Core\Components\Logger;
 
 
 class FileWriter implements WriterInterface

@@ -4,7 +4,7 @@
  * Единая точка входа, куда сервер перенаправляет все запросы
  */
 
-use Aigletter\Core\Application;
+use Iliah\Core\Application;
 
 // Включаем вывод ошибок, испольуется при разработке
 ini_set('display_errors', '1');

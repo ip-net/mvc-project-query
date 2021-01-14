@@ -4,10 +4,10 @@
  * Конфигурационный файл приложения
  */
 
-use Aigletter\Core\Components\Database\DbFactory;
-use Aigletter\Core\Components\Hello\HelloFactory;
-use Aigletter\Core\Components\Logger\LoggerFactory;
-use Aigletter\Core\Components\Router\RouterFactory;
+use Iliah\Core\Components\Database\DbFactory;
+use Iliah\Core\Components\Hello\HelloFactory;
+use Iliah\Core\Components\Logger\LoggerFactory;
+use Iliah\Core\Components\Router\RouterFactory;
 use App\Component\Test\TestFactory;
 
 return [

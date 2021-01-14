@@ -1,12 +1,12 @@
 {
-    "name": "aigletter/mvc-project.loc",
+    "name": "Iliah/mvc-project.loc",
     "description": "Test mvc project",
     "type": "project",
     "license": "MIT",
     "authors": [
         {
             "name": "Yurii Orlyk",
-            "email": "aigletter@gmail.com"
+            "email": "Iliah@gmail.com"
         }
     ],
     "minimum-stability": "dev",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Aigletter\\Core\\": "core",
+            "Iliah\\Core\\": "core",
             "App\\": "app"
         }
     }

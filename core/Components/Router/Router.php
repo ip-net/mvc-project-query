@@ -1,17 +1,17 @@
 <?php
 
 
-namespace Aigletter\Core\Components\Router;
+namespace Iliah\Core\Components\Router;
 
 
-use Aigletter\Core\Contracts\ComponentAbstract;
+use Iliah\Core\Contracts\ComponentAbstract;
 
 /**
  * Class Router
  * Полезный сервис, который занимается роутингом (маршрутизацией).
  * Суть его в том, чтобы определить какое действие (какой метод какого класса) нужно выполнить по каждому конкретному запросу (урлу)
  *
- * @package Aigletter\Core\Components\Router
+ * @package Iliah\Core\Components\Router
  */
 class Router extends ComponentAbstract
 {

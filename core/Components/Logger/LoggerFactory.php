@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Aigletter\Core\Components\Logger;
+namespace Iliah\Core\Components\Logger;
 
 
-use Aigletter\Core\Contracts\ComponentAbstract;
-use Aigletter\Core\Contracts\ComponentFactoryAbstract;
-use Aigletter\Core\Contracts\ComponentInterface;
+use Iliah\Core\Contracts\ComponentAbstract;
+use Iliah\Core\Contracts\ComponentFactoryAbstract;
+use Iliah\Core\Contracts\ComponentInterface;
 
 class LoggerFactory extends ComponentFactoryAbstract
 {

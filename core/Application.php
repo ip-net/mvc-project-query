@@ -1,20 +1,20 @@
 <?php
 
 
-namespace Aigletter\Core;
+namespace Iliah\Core;
 
 
-use Aigletter\Core\Components\Router\Router;
-use Aigletter\Core\Contracts\BootstrapInterface;
-use Aigletter\Core\Contracts\ContainerInterface;
-use Aigletter\Core\Contracts\RunnableInterface;
+use Iliah\Core\Components\Router\Router;
+use Iliah\Core\Contracts\BootstrapInterface;
+use Iliah\Core\Contracts\ContainerInterface;
+use Iliah\Core\Contracts\RunnableInterface;
 
 /**
  * Class Application
  * Класс прилоежния - контейнер, который содержит различные сервисы.
  * Приложение можно конфигурировать - добавлять и удалять различные севрисы
  *
- * @package Aigletter\Core
+ * @package Iliah\Core
  */
 class Application implements BootstrapInterface, ContainerInterface, RunnableInterface
 {

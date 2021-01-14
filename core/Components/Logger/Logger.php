@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Aigletter\Core\Components\Logger;
+namespace Iliah\Core\Components\Logger;
 
 
-use Aigletter\Core\Contracts\ComponentInterface;
+use Iliah\Core\Contracts\ComponentInterface;
 use Psr\Log\AbstractLogger;
 
 class Logger extends AbstractLogger implements ComponentInterface

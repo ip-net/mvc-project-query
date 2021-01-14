@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Aigletter\Core\Components\Database;
+namespace Iliah\Core\Components\Database;
 
 
-use Aigletter\Core\Contracts\BootstrapInterface;
-use Aigletter\Core\Contracts\ComponentInterface;
+use Iliah\Core\Contracts\BootstrapInterface;
+use Iliah\Core\Contracts\ComponentInterface;
 
 class Db implements ComponentInterface, BootstrapInterface
 {

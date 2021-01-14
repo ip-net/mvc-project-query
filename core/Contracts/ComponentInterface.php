@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Aigletter\Core\Contracts;
+namespace Iliah\Core\Contracts;
 
 
 interface ComponentInterface
